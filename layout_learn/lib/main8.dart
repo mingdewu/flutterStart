@@ -168,8 +168,8 @@ class MyApp extends StatelessWidget {
         title:Text(title),
       ),
       body: Column(
-        children:[pic,stars,ratings,iconList,leftColumn]
-      )
+        children:[pic,stars,ratings,iconList,leftColumn,]
+      ),
     );
   }
 }
