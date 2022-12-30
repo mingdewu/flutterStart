@@ -11,6 +11,9 @@
       <excludeFolder url="file://$MODULE_DIR$/layout_learn/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/layout_learn/build" />
       <excludeFolder url="file://$MODULE_DIR$/layout_learn/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/build" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/.dart_tool" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 33, extension level 3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
