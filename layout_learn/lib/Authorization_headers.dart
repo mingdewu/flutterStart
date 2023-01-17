@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'dart:async'
-import 'dart:convert'
+import 'dart:async';
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 final response = await http.get(
 Uri.parse('https://jsonlaceholder.typicode.com/album/1'),
