@@ -39,7 +39,7 @@ dependencies:
     git:
       url: https://github.com/google/flutter-desktop-embedding.git
       path: plugins/window_size
-
+  textfield_search: ^0.10.0
   google_fonts: ^3.0.1
 dev_dependencies:
   extension_google_sign_in_as_googleapis_auth: ^2.0.2
@@ -69,6 +69,7 @@ flutter:
   assets:
      - images/wxy.jpg
      - images/97.jpg
+     - images/119.jpg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

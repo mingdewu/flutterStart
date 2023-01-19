@@ -1,31 +1,36 @@
 // Copyright 2018 The Flutter team. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-
 import 'package:flutter/material.dart';
-
+import 'package:textfield_search/textfield_search.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(
+    items: List<String>.generate(100, (i) => 'Item $i'),
+  ),);
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final List<String> items;
+  const MyApp({super.key,required this.items});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'fakerLine',
       home: Scaffold(
+        backgroundColor: Colors.black87,
         appBar: AppBar(
           title: const Text('fakerLine'),
         ),
         body:  Center(
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.start,
             children:[
                 buildHeader(),
                 buildUserInfo(),
+                buildSearch(),
                 buildColumn(),
+                buildListView(),
                 buildRow(),
             ]
           ),
@@ -53,6 +58,32 @@ class MyApp extends StatelessWidget {
     );
 
 
+  Widget showList() {
+    return Scaffold(
+      appBar: AppBar(title: Text("リストサンプル")),
+      body: Column(
+        children: [
+          Flexible(
+            flex: 2,
+            child: Text("👇ここからリスト👇"),
+          ),
+          Flexible(
+            flex: 1,
+            child: ListView.builder(
+              itemCount: 100,
+              itemBuilder: (BuildContext context, int index) {
+                return (Text("リストNo, $index"));
+              },
+            ),
+          ),
+          Flexible(
+            flex: 2,
+            child: Text("👆ここまでリスト👆"),
+          ),
+        ],
+      ),
+    );
+  }
   Widget buildHeader()=>
     Container(
       alignment: Alignment.topRight,
@@ -72,12 +103,14 @@ class MyApp extends StatelessWidget {
     );
   Widget buildUserInfo() =>
     Container(
-      margin: const EdgeInsets.only(left:15.0,right: 15.0),
+      margin: const EdgeInsets.only(left:15.0,top:0,right: 15.0),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black),
+        color: Colors.black
       ),
       alignment: Alignment.topRight,
       padding:const EdgeInsets.all(10),
+
       child: Row(
         children: [
           Expanded(
@@ -86,37 +119,84 @@ class MyApp extends StatelessWidget {
                 children: [
                   Container(
                     child: const Text(
-                      'Milk',
+                      'Name',
                       style: TextStyle(
                         fontSize: 40,
                         fontWeight: FontWeight.bold,
+                          color: Colors.white
                       ),
                     ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.all(15.0),
+                    padding: const EdgeInsets.all(3.0),
+                    decoration :BoxDecoration(
+                      border: Border.all(color: Colors.green
+                    ),
+                  ),child: Text('BGMを設定',style: TextStyle(
+                      fontSize: 10,
+                    color: Colors.white
+                  ),),
                   ),
                   Text(
                       "set state",
                     style: TextStyle(
-                      fontSize: 25
+                      fontSize: 25,
+                        color: Colors.white
                     ),
                   )
                 ],
               )
           )
-        ],
+        ,buildStack()],
       ),
-    )
-
-
-  ;
+    );
+  Widget buildSearch()=>
+    Container(
+      margin:const EdgeInsets.all(20),
+      child: const TextField(
+        decoration:InputDecoration(
+        fillColor: Colors.grey,
+        filled: true,
+        border:OutlineInputBorder(),
+        labelText: 'Search',
+        )
+      ),
+    );
+  Widget buildStack()=>
+      Container(
+        alignment: Alignment.topRight,
+        color: Colors.black,
+        height: 100,
+        width: 200,
+        padding:const EdgeInsets.all(7),
+        child: const CircleAvatar(backgroundColor: Colors.lightGreenAccent,
+            backgroundImage:AssetImage('images/119.jpg'),
+            child: Text('MH'))
+      );
   Widget buildColumn() =>
       // #docregion Column
   Column(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children: [
-      Image.asset('images/pic1.jpg'),
-      Image.asset('images/pic2.jpg'),
-      Image.asset('images/pic3.jpg'),
+      Image.asset('images/119.jpg'),
     ],
   );
+  Widget buildListView() => (
+      Container(
+        height: 40,
+        child:ListView.builder(
+          itemCount: items.length,
+          prototypeItem: ListTile(
+            title: Text(items.first),
+          ),
+        itemBuilder:(context,index){
+            return ListTile(
+              title: Text(items[index]),
+            );
+        },
+      ),
+          )
+      );
 // #enddocregion Column
 }
