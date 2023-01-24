@@ -30,8 +30,10 @@ class MyApp extends StatelessWidget {
                 buildUserInfo(),
                 buildSearch(),
                 buildColumn(),
+                buildService(),
                 buildListView(),
                 buildRow(),
+
             ]
           ),
         ),
@@ -177,10 +179,74 @@ class MyApp extends StatelessWidget {
   Widget buildColumn() =>
       // #docregion Column
   Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      Image.asset('images/119.jpg'),
+      Padding(
+        padding:EdgeInsets.all(15),
+        child: const Text(
+          "FriendList",
+          style: TextStyle(color: Colors.white),
+        ),
+      ),
+
+      buildFriendView(),
+      buildGroupView()
     ],
+  );
+  Widget  buildFriendView() =>(
+    Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const CircleAvatar(
+          backgroundColor: Colors.lightGreen,
+          backgroundImage:AssetImage('images/119.jpg'),
+        ),
+        Icon(Icons.person,color: Colors.white),
+        const Text(
+        'friends',
+        style: TextStyle(color: Colors.white),
+        ),
+      ],
+    )
+  );
+  Widget buildGroupView() =>(
+      Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          const CircleAvatar(
+            backgroundColor: Colors.lightGreen,
+            backgroundImage:AssetImage('images/119.jpg'),
+          ),
+          Icon(Icons.groups,color: Colors.white),
+          const Text(
+            'groups',
+            style: TextStyle(color: Colors.white),
+          ),
+        ],
+      )
+  );
+  // var stars = Row(
+  //   mainAxisSize: MainAxisSize.min,
+  //   children: [
+  //     const Icon(Icons.star, color: Colors.black),
+  //     const Icon(Icons.star, color: Colors.black),
+  //   ],
+  // );
+  Widget buildService()=>(
+      Container(
+        height: 40,
+        padding: const EdgeInsets.all(20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            const Icon(Icons.mood, color: Colors.white,size: 50.0,),
+            const Icon(Icons.brush, color: Colors.white,size: 50.0,),
+            const Icon(Icons.card_giftcard, color: Colors.greenAccent,size: 50.0,),
+            const Icon(Icons.place, color: Colors.white,size: 50.0,),
+            const Icon(Icons.add, color: Colors.white,size: 50.0,),
+          ],
+        ),
+      )
   );
   Widget buildListView() => (
       Container(
