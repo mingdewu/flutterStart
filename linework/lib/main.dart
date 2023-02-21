@@ -9,6 +9,9 @@ import 'package:linework/paddingWidget.dart';
 import 'package:linework/edgeInsets.dart';
 import 'package:linework/limitedBox.dart';
 import 'package:linework/spacerWidget.dart';
+import 'package:linework/multiColumnWidget.dart';
+import 'package:linework/textBaseLineWidget.dart';
+import 'package:linework/gridViewWidget.dart';
 
 void main() => runApp(
     MyApp()
@@ -32,6 +35,9 @@ class MyApp extends StatelessWidget {
         '/edgeInsets': (context) => const EdgeInsertsWidget(),
         '/limitedBoxWidget': (context) => const LimitedBoxWidget(),
         '/spacerWidget': (context) => const SpacerWidget(),
+        '/multiColumnWidget': (context) => const MultiColumnWidget(),
+        '/textBaseLineWidget': (context) => const TextBaseLineWidget(),
+        '/gridViewWidget': (context) => const GridViewWidget(),
       },
     );
   }
@@ -60,6 +66,9 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/edgeInsets'),
               buttonFunction(context, '/limitedBoxWidget'),
               buttonFunction(context, '/spacerWidget'),
+              buttonFunction(context, '/multiColumnWidget'),
+              buttonFunction(context, '/textBaseLineWidget'),
+              buttonFunction(context, '/gridViewWidget'),
               ]
       ),
     ),
