@@ -14,6 +14,7 @@ import 'package:linework/textBaseLineWidget.dart';
 import 'package:linework/gridViewWidget.dart';
 import 'package:linework/pageViewWidget.dart';
 import 'package:linework/form/inputFormWidget.dart';
+import 'package:linework/videoPackage/videoPlayerPlugins.dart';
 
 void main() => runApp(
     MyApp()
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         '/gridViewWidget': (context) => const GridViewWidget(),
         '/pageViewWidget': (context) =>  PageViewWidget(),
         '/inputFormWidget': (context) =>  FormPage(),
+        '/videoPlayerApp': (context) =>  const VideoPlayerApp(),
       },
     );
   }
@@ -75,6 +77,7 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/gridViewWidget'),
               buttonFunction(context, '/pageViewWidget'),
               buttonFunction(context, '/inputFormWidget'),
+              buttonFunction(context, '/videoPlayerApp'),
               ]
       ),
     ),
