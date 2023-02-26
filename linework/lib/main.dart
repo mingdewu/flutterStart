@@ -13,6 +13,7 @@ import 'package:linework/multiColumnWidget.dart';
 import 'package:linework/textBaseLineWidget.dart';
 import 'package:linework/gridViewWidget.dart';
 import 'package:linework/pageViewWidget.dart';
+import 'package:linework/form/inputFormWidget.dart';
 
 void main() => runApp(
     MyApp()
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         '/textBaseLineWidget': (context) => const TextBaseLineWidget(),
         '/gridViewWidget': (context) => const GridViewWidget(),
         '/pageViewWidget': (context) =>  PageViewWidget(),
+        '/inputFormWidget': (context) =>  FormPage(),
       },
     );
   }
@@ -72,6 +74,7 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/textBaseLineWidget'),
               buttonFunction(context, '/gridViewWidget'),
               buttonFunction(context, '/pageViewWidget'),
+              buttonFunction(context, '/inputFormWidget'),
               ]
       ),
     ),
