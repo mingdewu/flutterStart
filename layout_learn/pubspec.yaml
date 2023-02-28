@@ -32,7 +32,6 @@ dependencies:
 
   flutter:
     sdk: flutter
-  awesome_package:
   provider: ^6.0.2
   http: ^0.13.5
   window_size:
