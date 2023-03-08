@@ -24,12 +24,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
-  http: ^0.12.2
+  http: ">=0.12.2 <0.14.0"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^4.1.1
+  mockito: ">=4.1.1 <6.0.0"
   mock_web_server: ^4.1.1
   # 以下はインテグレーションテスト用
   flutter_driver:
