@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
                 buildService(),
                 buildListView(),
                 buildRow(),
-
             ]
           ),
         ),
