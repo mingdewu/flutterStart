@@ -12,6 +12,12 @@ import 'package:linework/spacerWidget.dart';
 import 'package:linework/multiColumnWidget.dart';
 import 'package:linework/textBaseLineWidget.dart';
 import 'package:linework/gridViewWidget.dart';
+import 'package:linework/pageViewWidget.dart';
+import 'package:linework/form/inputFormWidget.dart';
+import 'package:linework/videoPackage/videoPlayerPlugins.dart';
+import 'package:linework/animation/anicontainer39.dart';
+import 'package:linework/animation/aniContainer42.dart';
+import 'package:linework/BottomNavigation.dart';
 
 void main() => runApp(
     MyApp()
@@ -38,6 +44,13 @@ class MyApp extends StatelessWidget {
         '/multiColumnWidget': (context) => const MultiColumnWidget(),
         '/textBaseLineWidget': (context) => const TextBaseLineWidget(),
         '/gridViewWidget': (context) => const GridViewWidget(),
+        '/pageViewWidget': (context) =>  PageViewWidget(),
+        '/inputFormWidget': (context) =>  FormPage(),
+        '/videoPlayerApp': (context) =>  const VideoPlayerApp(),
+        '/anicontainer39': (context) =>  Ani39(title: 'AnimatedSwitcher'),
+        '/aniContainer42': (context) => Ani42(title: 'AnimatedBuilder'),
+        '/BottomNavigation': (context) => BTNNavi(),
+        
       },
     );
   }
@@ -62,13 +75,19 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/sizeBoxWidget'),
               buttonFunction(context, '/alignCenterWidget'),
               buttonFunction(context, '/frationallySizedBoxWidget'),
-              buttonFunction(context, '/paddingWidget'),
-              buttonFunction(context, '/edgeInsets'),
-              buttonFunction(context, '/limitedBoxWidget'),
-              buttonFunction(context, '/spacerWidget'),
-              buttonFunction(context, '/multiColumnWidget'),
-              buttonFunction(context, '/textBaseLineWidget'),
-              buttonFunction(context, '/gridViewWidget'),
+              // buttonFunction(context, '/paddingWidget'),
+              // buttonFunction(context, '/edgeInsets'),
+              // buttonFunction(context, '/limitedBoxWidget'),
+              // buttonFunction(context, '/spacerWidget'),
+              // buttonFunction(context, '/multiColumnWidget'),
+              // buttonFunction(context, '/textBaseLineWidget'),
+              // buttonFunction(context, '/gridViewWidget'),
+              buttonFunction(context, '/pageViewWidget'),
+              buttonFunction(context, '/inputFormWidget'),
+              buttonFunction(context, '/videoPlayerApp'),
+              buttonFunction(context, '/anicontainer39'),
+              buttonFunction(context, '/aniContainer42'),
+              buttonFunction(context, '/BottomNavigation'),
               ]
       ),
     ),
