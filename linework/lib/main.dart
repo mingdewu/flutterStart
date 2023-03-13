@@ -18,6 +18,7 @@ import 'package:linework/videoPackage/videoPlayerPlugins.dart';
 import 'package:linework/animation/anicontainer39.dart';
 import 'package:linework/animation/aniContainer42.dart';
 import 'package:linework/BottomNavigation.dart';
+// import 'package:linework/voom.dart';
 
 void main() => runApp(
     MyApp()
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         '/anicontainer39': (context) =>  Ani39(title: 'AnimatedSwitcher'),
         '/aniContainer42': (context) => Ani42(title: 'AnimatedBuilder'),
         '/BottomNavigation': (context) => BTNNavi(),
+        // '/voomWidget': (context) => VoomWidget(),
         
       },
     );
@@ -88,6 +90,7 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/anicontainer39'),
               buttonFunction(context, '/aniContainer42'),
               buttonFunction(context, '/BottomNavigation'),
+              // buttonFunction(context, '/voomWidget'),
               ]
       ),
     ),
