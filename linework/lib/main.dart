@@ -12,7 +12,7 @@ import 'package:linework/spacerWidget.dart';
 import 'package:linework/multiColumnWidget.dart';
 import 'package:linework/textBaseLineWidget.dart';
 import 'package:linework/gridViewWidget.dart';
-
+import 'package:linework/searchBarWidget.dart';
 void main() => runApp(
     MyApp()
 );
@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/multiColumnWidget': (context) => const MultiColumnWidget(),
         '/textBaseLineWidget': (context) => const TextBaseLineWidget(),
         '/gridViewWidget': (context) => const GridViewWidget(),
+        '/searchBar':(context) => const SearchBarWidget(),
       },
     );
   }
@@ -69,6 +70,7 @@ class FirstPage extends StatelessWidget {
               buttonFunction(context, '/multiColumnWidget'),
               buttonFunction(context, '/textBaseLineWidget'),
               buttonFunction(context, '/gridViewWidget'),
+              buttonFunction(context, '/searchBar'),
               ]
       ),
     ),
