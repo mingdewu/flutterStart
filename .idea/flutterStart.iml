@@ -17,6 +17,9 @@
       <excludeFolder url="file://$MODULE_DIR$/linework/build" />
       <excludeFolder url="file://$MODULE_DIR$/linework/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/linework/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/chatapp/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/chatapp/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/chatapp/build" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 33, extension level 3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
