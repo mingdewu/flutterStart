@@ -1,53 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:lifeline/talk.dart';
+import 'package:lifeline/register.dart';
+import 'package:lifeline/quit.dart';
+class loginPage extends StatelessWidget{
+  const loginPage({super.key});
 
-void main() {
-  runApp(MaterialApp(
-    title: 'Flutter Navigation',
-    theme: ThemeData(
-      // This is the theme of your application.
-      primarySwatch: Colors.green,
-    ),
-    home: FirstRoute(),
-  ));
-}
-
-class FirstRoute extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        title: Text('First Screen'),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('Click Here'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => SecondRoute()),
-            );
-          },
-        ),
-      ),
+        appBar:AppBar(),
+        body:Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              loginButton(context),
+              registerButton(context),
+            ],
+          ),
+        )
     );
   }
 }
 
-class SecondRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Second Screen"),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back'),
-        ),
-      ),
+ElevatedButton loginButton(BuildContext context){
+  return ElevatedButton(onPressed: (){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context)=> talkPage()),
     );
-  }
+    }, child: const Text("Login"));
 }
+
+
