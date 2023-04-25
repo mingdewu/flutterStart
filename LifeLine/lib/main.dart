@@ -4,7 +4,6 @@ void main() {
   runApp(new MyApp());
 }
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
         accentColor: const Color(0xFF2196f3),
         canvasColor: const Color(0xFFfafafa),
       ),
-      home: new MyHomePage(),
+      home: new FirstRoute(),
     );
   }
 }
@@ -53,6 +52,47 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       )
+    );
+  }
+}
+
+class FirstRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Screen'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Click Here'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SecondRoute()),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Screen"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back'),
+        ),
+      ),
     );
   }
 }
