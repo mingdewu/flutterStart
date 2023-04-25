@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/login.dart';
 import 'package:lifeline/quit.dart';
 class registerPage extends StatelessWidget{
   const registerPage({super.key});
@@ -15,7 +14,7 @@ class registerPage extends StatelessWidget{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              loginButton(context),
+              registerButton(context),
             ],
           ),
         )

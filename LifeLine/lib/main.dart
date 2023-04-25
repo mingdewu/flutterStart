@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       title: 'Life Line',
       initialRoute: "/",
       routes: {
-        '/': (context) =>  const loginPage(),
-        '/login': (context) => const talkPage(),
+        '/': (context) =>  loginPage(),
+        '/login': (context) => talkPage(),
         //'/register': (context) => const registerPage(),
       },
     );

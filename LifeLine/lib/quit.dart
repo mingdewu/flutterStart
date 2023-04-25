@@ -5,7 +5,7 @@ ElevatedButton quitButton(BuildContext context){
   return ElevatedButton(onPressed: (){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context)=> const loginPage()),
+      MaterialPageRoute(builder: (context)=> loginPage()),
     );
     }, child: const Text("quit"));
 }
