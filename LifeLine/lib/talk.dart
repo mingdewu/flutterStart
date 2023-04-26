@@ -12,7 +12,7 @@ class talkpageState extends State<talkPage> {
   int _selectedIndex = 0;
 
   static const List<Widget> _pages = <Widget>[
-    achievementPage(),
+    // achievementPage(),
     friendsListPage(),
     achievementPage(),
     projectPage(),
@@ -28,7 +28,7 @@ class talkpageState extends State<talkPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Talk Screen"),
+        title: Text("Life Line"),
       ),
       body: Center(
         // child: Column(
@@ -40,27 +40,27 @@ class talkpageState extends State<talkPage> {
         //     quitButton(context),
         //   ],
         // )
-        child: _pages.elementAt(_selectedIndex),
+          child: _pages.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Talk'),
+              icon: Icon(Icons.chat),
+              label: 'friend_List'),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: ('Business'),
+            label: ('achivment'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
-            label: ('School'),
+            label: ('project'),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_hospital),
-            label: ('School'),
-          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.local_hospital),
+          //   label: ('School'),
+          // ),
         ],
-
+        currentIndex: _selectedIndex,
         selectedItemColor: Colors.blueAccent,
         onTap: _onItemTapped,
       ),

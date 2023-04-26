@@ -8,9 +8,6 @@ class achievementPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AchievementPage Screen'),
-      ),
       body: Center(
         child: Container(
         child: Column(

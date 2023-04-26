@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lifeline/talk.dart';
 import 'package:lifeline/register.dart';
-
+import 'package:lifeline/friendList.dart';
 class loginPage extends StatefulWidget{
   @override
   _loginPageState createState() => _loginPageState();
@@ -55,7 +55,7 @@ ElevatedButton loginButton(BuildContext context){
   return ElevatedButton(onPressed: (){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context)=> talkPage()),
+      MaterialPageRoute(builder: (context)=> friendsListPage()),
     );
     }, child: const Text("Login"));
 }
