@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lifeline/talk.dart';
 import 'package:lifeline/quit.dart';
 import 'package:lifeline/friendList.dart';
-import 'package:lifeline/achienvement.dart';
+import 'package:lifeline/achievment.dart';
 import 'package:lifeline/project.dart';
 class chatPage extends StatelessWidget{
   const chatPage({super.key});
@@ -10,7 +10,9 @@ class chatPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar:AppBar(),
+        appBar:AppBar(
+          title: Text("abc"),
+        ),
         body:Center(
             child: Column(
               children: [

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/achienvement.dart';
+import 'package:lifeline/achievment.dart';
 import 'package:lifeline/friendList.dart';
 import 'package:lifeline/project.dart';
 import 'package:lifeline/quit.dart';
@@ -46,10 +46,10 @@ class talkpageState extends State<talkPage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: Icon(Icons.chat),
-              label: 'friend_List'),
+              label: 'friends'),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
-            label: ('achivment'),
+            label: ('achievement'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),

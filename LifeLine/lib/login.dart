@@ -55,7 +55,7 @@ ElevatedButton loginButton(BuildContext context){
   return ElevatedButton(onPressed: (){
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context)=> friendsListPage()),
+      MaterialPageRoute(builder: (context)=> talkPage()),
     );
     }, child: const Text("Login"));
 }

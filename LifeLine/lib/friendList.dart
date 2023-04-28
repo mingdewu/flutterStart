@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lifeline/project.dart';
 import 'package:lifeline/talk.dart';
 import 'package:lifeline/quit.dart';
-import 'package:lifeline/achienvement.dart';
+import 'package:lifeline/achievment.dart';
 class friendsListPage extends StatelessWidget {
   const friendsListPage({super.key});
 
@@ -17,9 +17,16 @@ class friendsListPage extends StatelessWidget {
             height: 50.0,
             child:yearsList(context),
           ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 5.0),
-            child:const Text("friend list"),
+          Column(
+           children:  <Widget>[
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star))),
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star))),
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star))),
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star))),
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star))),
+             Card(child:ListTile( title: Text("Alarm"),subtitle: Text("This is the time."), leading:  CircleAvatar(backgroundImage: NetworkImage("https://miro.medium.com/fit/c/64/64/1*WSdkXxKtD8m54-1xp75cqQ.jpeg")), trailing: Icon(Icons.star)))
+
+           ],
           )
         ]
       )
@@ -29,18 +36,29 @@ class friendsListPage extends StatelessWidget {
 
 Column myFriendListPage(BuildContext context) {
   return Column(
-      children: [
-        Container(
-          alignment:Alignment.bottomLeft,
-          margin: const EdgeInsets.symmetric(vertical: 5.0),
-          height: 50.0,
-          child:yearsList(context),
-        ),
-        Container(
-          margin: const EdgeInsets.symmetric(vertical: 5.0),
-          child:const Text("friend list"),
+    children: [
+      Container(
+        alignment:Alignment.bottomLeft,
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
+        height: 50.0,
+        child:yearsList(context),
+      ),
+      Container(
+        margin: const EdgeInsets.symmetric(vertical: 5.0),
+        child: ListView(
+          children: <Widget>[
+          ListTile(
+            leading: Icon(Icons.map),
+            title: Text('Map'),
+          ),
+          ListTile(
+            leading: Icon(Icons.photo_album),
+            title: Text('Album'),
+          ),
+          ]
         )
-      ]
+      ),
+    ],
   );
 }
 

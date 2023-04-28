@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lifeline/talk.dart';
 import 'package:lifeline/quit.dart';
 import 'package:lifeline/friendList.dart';
-import 'package:lifeline/achienvement.dart';
+import 'package:lifeline/achievment.dart';
 class projectPage extends StatelessWidget {
   const projectPage({super.key});
   @override
