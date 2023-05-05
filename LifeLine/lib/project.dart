@@ -3,42 +3,61 @@ import 'package:lifeline/talk.dart';
 import 'package:lifeline/quit.dart';
 import 'package:lifeline/friendList.dart';
 import 'package:lifeline/achievment.dart';
+import 'package:lifeline/note.dart';
+import 'package:lifeline/detail_screen.dart';
 class projectPage extends StatelessWidget {
   const projectPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: ListView(
-          padding: const EdgeInsets.all(8),
-          children: <Widget>[
-            Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: const Center(child: Text('Project A')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[500],
-              child: const Center(child: Text('Project B')),
-            ),
-            Container(
-              height: 50,
-              color: Colors.amber[100],
-              child: const Center(child: Text('Project C')),
-            ),
-          ],
-        )
+        child: ProjectList(),
+      ),
+      floatingActionButton: const FloatingActionButton(
+        tooltip: 'Add', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.add),
       ),
     );
   }
 }
 
-ElevatedButton projectButton(BuildContext context){
-  return ElevatedButton(onPressed: (){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context)=> projectPage()),
+
+class ProjectList extends StatelessWidget{
+  final List<Note> _noteList = [
+    Note(
+        title:"Project 1",
+        content:"project 1",
+    ),
+    Note(
+      title:"project 2",
+      content:"project 2",
+    )
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.builder(
+          itemCount: _noteList.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(
+                _noteList[index].title,
+              ),
+              subtitle: Text(
+                _noteList[index].content,
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailScreen(note: _noteList[index]),
+                  ),
+                );
+              },
+            );
+          }),
     );
-    }, child: const Text("project Page"));
+  }
 }
+

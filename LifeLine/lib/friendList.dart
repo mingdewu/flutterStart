@@ -13,7 +13,6 @@ class friendsListPage extends StatelessWidget {
         children: [
           Container(
             alignment:Alignment.bottomLeft,
-            margin: const EdgeInsets.symmetric(vertical: 5.0),
             height: 50.0,
             child:yearsList(context),
           ),

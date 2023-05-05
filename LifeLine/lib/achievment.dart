@@ -15,9 +15,16 @@ class achievementPage extends StatelessWidget {
       length: myTabs.length,
       child: Scaffold(
         appBar: AppBar(
-          bottom: const TabBar(
-            tabs: myTabs,
-          ),
+            automaticallyImplyLeading: false,
+            flexibleSpace: new Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const TabBar(tabs: myTabs,)
+              ],
+            )
+          // bottom: const TabBar(
+          //   tabs: myTabs,
+          // ),
         ),
         body: TabBarView(
           children: myTabs.map((Tab tab) {
