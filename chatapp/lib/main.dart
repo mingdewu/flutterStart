@@ -95,28 +95,28 @@ class _LoginPageState extends State<LoginPage> {
                 )
               ),
               const SizedBox(height:8),
-              COntainer(
-              width:double.infinity,
-              child:OutlinedButton(
-              child:Text('ログイン'),
-              onPressd:() async {
-                try {
-                  final FirebaseAuth auth = FirebaseAuth.instance;
-                  await auth.signInWithEmailAndPassword(
-                  email:email,
-                  password:password,
-                  );
-                 await Navigator.of(context).pushReplacement(
-                 MaterialPageroute(builder:(context){
-                   return ChatPage();
-                 }),
-                 );
-                } catch (e){
-                  setState(){
-                    infoText = "ログインできない、${e.toString()}";
-                  }
-                }
-              }))
+              // Container(
+              // width:double.infinity,
+              //     child:ElevatedButton(
+              //         child:Text('ログイン'),
+              // onPressd:() async {
+              //   try {
+              //     final FirebaseAuth auth = FirebaseAuth.instance;
+              //     await auth.signInWithEmailAndPassword(
+              //     email:email,
+              //     password:password,
+              //     );
+              //    await Navigator.of(context).pushReplacement(
+              //    MaterialPageroute(builder:(context){
+              //      return ChatPage();
+              //    }),
+              //    );
+              //   } catch (e){
+              //     setState(){
+              //       infoText = "ログインできない、${e.toString()}";
+              //     }
+              //   }
+              // }))
             ],
           ),
         ),

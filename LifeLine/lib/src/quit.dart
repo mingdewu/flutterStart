@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/login.dart';
+import 'package:lifeline/src/login.dart';
 
 ElevatedButton quitButton(BuildContext context){
   return ElevatedButton(onPressed: (){

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/quit.dart';
+import 'package:lifeline/src/quit.dart';
 class registerPage extends StatelessWidget{
   const registerPage({super.key});
 

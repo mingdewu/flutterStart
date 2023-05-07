@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:lifeline/note.dart';
+import 'package:lifeline/src/note.dart';
 
 class DetailScreen extends StatelessWidget {
   final Note note;

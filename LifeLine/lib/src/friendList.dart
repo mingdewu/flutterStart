@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/project.dart';
-import 'package:lifeline/talk.dart';
-import 'package:lifeline/quit.dart';
-import 'package:lifeline/achievment.dart';
+import 'package:lifeline/src/project.dart';
+import 'package:lifeline/src/talk.dart';
+import 'package:lifeline/src/quit.dart';
+import 'package:lifeline/src/achievment.dart';
 class friendsListPage extends StatelessWidget {
   const friendsListPage({super.key});
 

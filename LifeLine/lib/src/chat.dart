@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/talk.dart';
-import 'package:lifeline/quit.dart';
-import 'package:lifeline/friendList.dart';
-import 'package:lifeline/achievment.dart';
-import 'package:lifeline/project.dart';
+import 'package:lifeline/src/talk.dart';
+import 'package:lifeline/src/quit.dart';
+import 'package:lifeline/src/friendList.dart';
+import 'package:lifeline/src/achievment.dart';
+import 'package:lifeline/src/project.dart';
 class chatPage extends StatelessWidget{
   const chatPage({super.key});
 
@@ -19,7 +19,6 @@ class chatPage extends StatelessWidget{
                 talkButton(context),
                 friendListButton(context),
                 achievementButton(context),
-                projectButton(context),
                 quitButton(context),
               ],
             )

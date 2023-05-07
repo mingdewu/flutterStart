@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/achievment.dart';
-import 'package:lifeline/friendList.dart';
-import 'package:lifeline/project.dart';
-import 'package:lifeline/quit.dart';
+import 'package:lifeline/src/achievment.dart';
+import 'package:lifeline/src/friendList.dart';
+import 'package:lifeline/src/project.dart';
+import 'package:lifeline/src/quit.dart';
 class talkPage extends StatefulWidget{
   @override
   talkpageState createState() => talkpageState();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lifeline/talk.dart';
-import 'package:lifeline/register.dart';
-import 'package:lifeline/friendList.dart';
+import 'package:lifeline/src/talk.dart';
+import 'package:lifeline/src/register.dart';
+import 'package:lifeline/src/friendList.dart';
 class loginPage extends StatefulWidget{
   @override
   _loginPageState createState() => _loginPageState();
