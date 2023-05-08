@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lifeline/src/login.dart';
 import 'package:lifeline/src/talk.dart';
-import 'package:lifeline/src/quit.dart';
 void main() => runApp(
     MyApp()
 );

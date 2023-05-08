@@ -206,6 +206,9 @@
       <excludeFolder url="file://$MODULE_DIR$/resources/book_flutter_3_5_customscroll/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/resources/book_flutter_3_5_customscroll/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/resources/book_flutter_3_5_customscroll/build" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/chat/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/chat/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/LifeLine/chat/build" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 33, extension level 3 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
