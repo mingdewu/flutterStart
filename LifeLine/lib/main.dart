@@ -19,36 +19,33 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class FirstPage extends StatelessWidget {
-  const FirstPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: const Text('First Page')
-      ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children:[
-              buttonFunction(context, '/login'),
-            ]
-        ),
-      ),
-    );
-  }
-}
-
-buttonFunction(context,var route){
-  return ElevatedButton(
-    onPressed: () {
-      Navigator.pushNamed(context, route);
-    },
-    child:  Text('Launch '+route),
-  );
-}
+//
+// class FirstPage extends StatelessWidget {
+//   const FirstPage({super.key});
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Center(
+//         child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             children:[
+//               buttonFunction(context, '/login'),
+//             ]
+//         ),
+//       ),
+//     );
+//   }
+// }
+//
+// buttonFunction(context,var route){
+//   return ElevatedButton(
+//     onPressed: () {
+//       Navigator.pushNamed(context, route);
+//     },
+//     child:  Text('Launch '+route),
+//   );
+// }
 
 
 

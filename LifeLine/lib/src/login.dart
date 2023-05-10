@@ -15,10 +15,10 @@ class _loginPageState extends State<loginPage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        appBar:AppBar(),
         body:Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment:MainAxisAlignment.center,
             children: [
               buildLogo(),
               TextFormField(
@@ -29,6 +29,7 @@ class _loginPageState extends State<loginPage>{
                   });
                 },
               ),
+              SizedBox(width: 50.0),
               TextFormField(
                 decoration: InputDecoration(labelText: 'パスワード'),
                 obscureText: true,
@@ -64,7 +65,7 @@ Widget buildLogo() =>
     Container(
       margin: const EdgeInsets.only(left:15.0,top:0,right: 15.0),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
+          // border: Border.all(color: Colors.black),
           color: Colors.white
       ),
       alignment: Alignment.topRight,
@@ -78,6 +79,7 @@ Widget buildLogo() =>
                 children: [
                   buildLogo1(),
                   buildLogo2(),
+                  SizedBox(width: 50.0),
                 ],
               )
           )
@@ -99,7 +101,7 @@ Widget buildLogo1() =>
 
 Widget buildLogo2()=>
     const Center(
-      child: Text('Stronger than yesterday',style: TextStyle(
+      child: Text('Connect Myself',style: TextStyle(
           fontSize: 20,
           color: Colors.blueAccent
       ),
