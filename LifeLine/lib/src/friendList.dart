@@ -16,15 +16,43 @@ class friendsListPage extends StatefulWidget {
 }
 
 class _friendsListPageState extends State<friendsListPage> {
-  List<ChatUsers> chatUsers =[
-    ChatUsers(text: "Friend A",secondaryText: "Good idea!",image: "images/1.jpg",time: "now"),
-    ChatUsers(text: "Friend B",secondaryText: "OK, Let's Go!",image: "images/1.jpg",time: "yesterday"),
-    ChatUsers(text: "Friend C",secondaryText: "Maybe i was wrong!",image: "images/1.jpg",time: "05/12"),
-    ChatUsers(text: "Friend D",secondaryText: "I will go to hospital tomorrow!",image: "images/1.jpg",time: "05/11"),
-    ChatUsers(text: "Friend E",secondaryText: "Dont do that",image: "images/1.jpg",time: "05/06"),
-    ChatUsers(text: "Friend F",secondaryText: "Please clean your room",image: "images/1.jpg",time: "Last month"),
-    ChatUsers(text: "Friend G",secondaryText: "Can you help me?",image: "images/1.jpg",time: "Last year"),
-  ]
+  List<ChatUsers> chatUsers = [
+    ChatUsers(
+        text: "Friend A",
+        secondaryText: "Good idea!",
+        image: "images/1.jpg",
+        time: "now"),
+    ChatUsers(
+        text: "Friend B",
+        secondaryText: "OK, Let's Go!",
+        image: "images/1.jpg",
+        time: "yesterday"),
+    ChatUsers(
+        text: "Friend C",
+        secondaryText: "Maybe i was wrong!",
+        image: "images/1.jpg",
+        time: "05/12"),
+    ChatUsers(
+        text: "Friend D",
+        secondaryText: "I will go to hospital tomorrow!",
+        image: "images/1.jpg",
+        time: "05/11"),
+    ChatUsers(
+        text: "Friend E",
+        secondaryText: "Dont do that",
+        image: "images/1.jpg",
+        time: "05/06"),
+    ChatUsers(
+        text: "Friend F",
+        secondaryText: "Please clean your room",
+        image: "images/1.jpg",
+        time: "Last month"),
+    ChatUsers(
+        text: "Friend G",
+        secondaryText: "Can you help me?",
+        image: "images/1.jpg",
+        time: "Last year"),
+  ];
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -32,7 +60,7 @@ class _friendsListPageState extends State<friendsListPage> {
         child: Scaffold(
             appBar: AppBar(
               title: Padding(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.only(left: 16,right: 16,top: 16),
                 child: TextField(
                   decoration: InputDecoration(
                       hintText: "Search...",
@@ -51,18 +79,19 @@ class _friendsListPageState extends State<friendsListPage> {
               backgroundColor: Colors.white,
             ),
             body: ListView.builder(
-              itemCount: 10,
+              
+              itemCount: chatUsers.length,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemBuilder: (context, index) {
                 return ChatUserLIst(
-                  text: chatUsers[index].text, 
-                  secondaryText: chatUsers[index].secondaryText, 
-                  image: chatUsers[index].image, 
-                  time: chatUsers[index].time);
+                    text: chatUsers[index].text,
+                    secondaryText: chatUsers[index].secondaryText,
+                    image: chatUsers[index].image,
+                    time: chatUsers[index].time,
+                    isMessageRead: (index == 1|| index ==3)?true:false,);
               },
             )));
-
   }
 }
 
@@ -77,7 +106,7 @@ Column myFriendListPage(BuildContext context) {
       ),
       Container(
           margin: const EdgeInsets.symmetric(vertical: 5.0),
-          child: ListView(children: <Widget>[
+          child: ListView(children: const <Widget>[
             ListTile(
               leading: Icon(Icons.map),
               title: Text('Map'),
