@@ -1,4 +1,0 @@
-#Tue May 23 22:55:13 CST 2023
-base.0=D\:\\restore\\flutterformvscode\\flutterStart\\imagegenarator\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
