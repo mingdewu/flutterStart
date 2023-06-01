@@ -29,128 +29,121 @@ class _ChatPageState extends State<ChatPage> {
   }
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
-          floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-          floatingActionButton:  AvatarGlow(
-            endRadius: 75.0,
-            animate: isListening ,
-            duration: Duration(milliseconds: 2000),
-            glowColor: Colors.greenAccent,
-            repeat: true,
-            repeatPauseDuration: Duration(milliseconds:100),
-            showTwoGlows: true,
-            child:GestureDetector(
-              onTapDown: (details) async {
-               if(!isListening){
-                 var available = await speechToText.initialize();
-                 if (available){
-                   setState(() {
-                     isListening = true;
-                     speechToText.listen(
-                       onResult: (result){
-                         setState(() {
-                           text=result.recognizedWords;
-                         });
-                       },
-                     );
-                   });
-                 }
-               }
-              },
-              onTapUp: (details) async{
-                setState(() {
-                  isListening = false;
-                });
-                await speechToText.stop();
-                if(text.isNotEmpty && text !="Hold the button and start speak"){
-                    messages.add(ChatMessage(text: text, type: ChatMessageType.user));
-                    var msg = await ApiServices.sendMessage(text);
-                    msg = msg.trim();
-                    setState(() {
-                      messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
-                    });
-                    Future.delayed(Duration(milliseconds: 500),(){
-                      TextToSpeech.speak(msg);
-                    });
-                }else{
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text("Failed")));
-                }
-
-                messages.add(ChatMessage(text:text, type:ChatMessageType.user));
+    return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton:  AvatarGlow(
+        endRadius: 75.0,
+        animate: isListening ,
+        duration: Duration(milliseconds: 2000),
+        glowColor: Colors.greenAccent,
+        repeat: true,
+        repeatPauseDuration: Duration(milliseconds:100),
+        showTwoGlows: true,
+        child:GestureDetector(
+          onTapDown: (details) async {
+           if(!isListening){
+             var available = await speechToText.initialize();
+             if (available){
+               setState(() {
+                 isListening = true;
+                 speechToText.listen(
+                   onResult: (result){
+                     setState(() {
+                       text=result.recognizedWords;
+                     });
+                   },
+                 );
+               });
+             }
+           }
+          },
+          onTapUp: (details) async{
+            setState(() {
+              isListening = false;
+            });
+            await speechToText.stop();
+            if(text.isNotEmpty && text !="Hold the button and start speak"){
+                messages.add(ChatMessage(text: text, type: ChatMessageType.user));
                 var msg = await ApiServices.sendMessage(text);
-                
+                msg = msg.trim();
                 setState(() {
                   messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
                 });
-              },
-              child: CircleAvatar(
-                backgroundColor: Colors.cyanAccent,
-                radius: 35,
-                child:Icon(isListening ? Icons.mic:Icons.mic_none,color:Colors.white),
-              ),
-            )
-          ),
-          appBar: AppBar(
-            leading: Icon(Icons.sort_rounded,color: Colors.greenAccent,),
-            centerTitle: true,
-            backgroundColor:Colors.cyan,
-            toolbarHeight: 100,
-            title: const Padding(
-              padding:EdgeInsets.all(8.0),
-              child: Text("Flutter ChatGPT" ,textAlign: TextAlign.center,),
-        ),
-      ),
-          body: SingleChildScrollView(
-            reverse:true,
-            physics:const BouncingScrollPhysics(),
-            child: Container(
+                Future.delayed(Duration(milliseconds: 500),(){
+                  TextToSpeech.speak(msg);
+                });
+            }else{
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text("Failed")));
+            }
 
-              // color: Colors.black26,
-              padding: const EdgeInsets.symmetric(horizontal:24,vertical: 16),
-              margin:const EdgeInsets.only(bottom: 150),
-              child: Column(
-                children: [
-                  Text(
-                    text,
-                    style:
-                    TextStyle(fontSize:24,color: isListening?Colors.black87:Colors.black26,fontWeight:  FontWeight.w600),
-                  ),
-                  const SizedBox(height: 12,),
-                  Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16,vertical:12),
-                        decoration: BoxDecoration(
-                          color: Colors.black26,
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      child:ListView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        controller: scrollController,
-                        shrinkWrap:true,
-                        itemCount:messages.length,
-                        itemBuilder:(BuildContext context,int index){
-                          var chat = messages[index];
-                          return chatBubble(
-                            chattext:chat.text,
-                            type:chat.type,
-                          );
-                        }
-                      ),
+            messages.add(ChatMessage(text:text, type:ChatMessageType.user));
+            var msg = await ApiServices.sendMessage(text);
+
+            setState(() {
+              messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
+            });
+          },
+          child: CircleAvatar(
+            backgroundColor: Colors.cyanAccent,
+            radius: 35,
+            child:Icon(isListening ? Icons.mic:Icons.mic_none,color:Colors.white),
+          ),
+        )
+      ),
+      appBar: AppBar(
+        leading: const Icon(Icons.sort_rounded,color: Colors.greenAccent,),
+        centerTitle: true,
+        backgroundColor:Colors.cyan,
+        toolbarHeight: 100,
+        title: const Padding(
+          padding:EdgeInsets.all(8.0),
+          child: Text("Flutter ChatGPT" ,textAlign: TextAlign.center,),
+    ),
+      ),
+      body: Container(
+        // color: Colors.black26,
+        padding: const EdgeInsets.symmetric(horizontal:20,vertical: 16),
+        margin:const EdgeInsets.only(bottom: 120),
+        child: Column(
+          children: <Widget>[
+            Text(
+              text,
+              style:
+              TextStyle(fontSize:24,color: isListening?Colors.black87:Colors.black26,fontWeight:  FontWeight.w600),
+            ),
+            const SizedBox(height: 12,),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 16,vertical:12),
+                decoration: BoxDecoration(
+                  color: Colors.black26,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child:ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    controller: scrollController,
+                    shrinkWrap:true,
+                    itemCount:messages.length,
+                    itemBuilder:(BuildContext context,int index){
+                      var chat = messages[index];
+                      return chatBubble(
+                        chattext:chat.text,
+                        type:chat.type,
+                      );
+                    }
                     ),
-                  ),
-                  const SizedBox(height: 12,),
-                  const Text(
-                    "Voice Assistant",
-                    style: TextStyle(
-                      color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16
-                    ),
-                  )
-                ],
               ),
             ),
-          ),
-    )
+            const SizedBox(height: 12,),
+            const Text(
+              "Voice Assistant",
+              style: TextStyle(
+                color: Colors.black87,fontWeight: FontWeight.w600,fontSize: 16
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 
@@ -165,7 +158,7 @@ class _ChatPageState extends State<ChatPage> {
         Expanded(
           child: Container(
             padding: EdgeInsets.all(12),
-            margin: const EdgeInsets.only(bottom: 8),
+            margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
               color:type==ChatMessageType.bot?Colors.cyanAccent:Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(12)),

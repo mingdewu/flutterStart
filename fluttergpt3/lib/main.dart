@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_gpt3/ttf.dart';
 import 'package:flutter_gpt3/tts_screen.dart';
 
 import 'chat_screen.dart';
-void main() async{
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor:Colors.transparent));
   WidgetsFlutterBinding.ensureInitialized();
-
   TextToSpeech.initTTS();
   runApp(const MyApp());
 }
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Speech to Text',
-      home: const ChatPage(),
+      home:  const ChatPage(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
