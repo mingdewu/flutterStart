@@ -4,7 +4,7 @@ import 'Package:http/http.dart' as http;
 String apiKey = "api-key";
 class ApiServices{
 
-  static String baseUrl = "https://api.open.com/v1/completions";
+  static String baseUrl = "https://api.openai.com/v1/completions";
 
   static Map<String,String> header ={
     'Content-Type':'application/json',
@@ -21,7 +21,7 @@ class ApiServices{
       "top_p":1,
       "frequency_penalty":0.0,
       "presence_penalty":0.0,
-      "stop":["human:","AI"]
+      "stop":[" Human:"," AI:"]
     },
     )
     );

@@ -7,7 +7,7 @@ class TextToSpeech{
   static initTTS(){
     tts.setLanguage("zh-CN");
     tts.setPitch(1.0);
-    tts.setSpeechRate(0.5);
+    tts.setSpeechRate(1.0);
     tts.setVolume(0.5);
   }
 

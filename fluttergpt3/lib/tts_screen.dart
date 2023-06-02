@@ -21,7 +21,8 @@ class TTS extends StatelessWidget {
           ),
           ElevatedButton(onPressed: (){
             TextToSpeech.speak(textController.text);
-          }, child: const Text("Speak")),
+            },
+              child: const Text("Speak")),
         ],
       )
     );

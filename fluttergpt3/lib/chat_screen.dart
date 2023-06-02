@@ -62,7 +62,7 @@ class _ChatPageState extends State<ChatPage> {
               isListening = false;
             });
             await speechToText.stop();
-            if(text.isNotEmpty && text !="Hold the button and start speak"){
+            if(text.isNotEmpty && text !="Hold the button and start speaking"){
                 messages.add(ChatMessage(text: text, type: ChatMessageType.user));
                 var msg = await ApiServices.sendMessage(text);
                 msg = msg.trim();
@@ -76,24 +76,25 @@ class _ChatPageState extends State<ChatPage> {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text("Failed")));
             }
 
-            messages.add(ChatMessage(text:text, type:ChatMessageType.user));
-            var msg = await ApiServices.sendMessage(text);
-
-            setState(() {
-              messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
-            });
+            // messages.add(ChatMessage(text:text, type:ChatMessageType.user));
+            // var msg = await ApiServices.sendMessage(text);
+            //
+            // setState(() {
+            //   messages.add(ChatMessage(text: msg, type: ChatMessageType.bot));
+            // });
           },
           child: CircleAvatar(
             backgroundColor: Colors.cyanAccent,
             radius: 35,
             child:Icon(isListening ? Icons.mic:Icons.mic_none,color:Colors.white),
           ),
-        )
+        ),
       ),
       appBar: AppBar(
         leading: const Icon(Icons.sort_rounded,color: Colors.greenAccent,),
         centerTitle: true,
         backgroundColor:Colors.cyan,
+        elevation: 0.0,
         toolbarHeight: 100,
         title: const Padding(
           padding:EdgeInsets.all(8.0),
@@ -101,15 +102,14 @@ class _ChatPageState extends State<ChatPage> {
     ),
       ),
       body: Container(
-        // color: Colors.black26,
+        color: Colors.black26,
         padding: const EdgeInsets.symmetric(horizontal:20,vertical: 16),
         margin:const EdgeInsets.only(bottom: 120),
         child: Column(
           children: <Widget>[
             Text(
               text,
-              style:
-              TextStyle(fontSize:24,color: isListening?Colors.black87:Colors.black26,fontWeight:  FontWeight.w600),
+              style: TextStyle(fontSize:24,color: isListening?Colors.black87:Colors.black26,fontWeight:  FontWeight.w600),
             ),
             const SizedBox(height: 12,),
             Expanded(
@@ -130,10 +130,8 @@ class _ChatPageState extends State<ChatPage> {
                         chattext:chat.text,
                         type:chat.type,
                       );
-                    }
-                    ),
-              ),
-            ),
+                    }),
+              ),),
             const SizedBox(height: 12,),
             const Text(
               "Voice Assistant",
@@ -152,21 +150,21 @@ class _ChatPageState extends State<ChatPage> {
       children: [
         CircleAvatar(
           backgroundColor: Colors.cyanAccent,
-          child:type == ChatMessageType.bot ?Image.asset('assets/icon.png'):Icon(Icons.person,color: Colors.white,)
+          child:type == ChatMessageType.bot ?Image.asset('assets/openai_logo.png'):Icon(Icons.person,color: Colors.white,)
         ),
         const SizedBox(width:12),
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
               color:type==ChatMessageType.bot?Colors.cyanAccent:Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(12)),
+              borderRadius: const BorderRadius.all(Radius.circular(12)),
             ),
             child: Text("$chattext",
               style:
               TextStyle(
-                  color:type==ChatMessageType.bot?Colors.cyanAccent: Colors.white,
+                  color:type==ChatMessageType.bot?Colors.black87: Colors.black,
                   fontSize: 15,
                   fontWeight: type==ChatMessageType.bot?FontWeight.w600:FontWeight.w300
               ),
