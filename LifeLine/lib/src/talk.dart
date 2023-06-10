@@ -68,11 +68,11 @@ class talkpageState extends State<talkPage> {
   }
 }
 
-ElevatedButton talkButton(BuildContext context){
-  return ElevatedButton(onPressed: (){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context)=> talkPage()),
-    );
-  }, child: const Text("talk Page"));
-}
+// ElevatedButton talkButton(BuildContext context){
+//   return ElevatedButton(onPressed: (){
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(builder: (context)=> talkPage()),
+//     );
+//   }, child: const Text("talk Page"));
+// }

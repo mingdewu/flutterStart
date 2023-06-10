@@ -6,4 +6,5 @@ class ChatMessage {
     required this.message,
     required this.type,
   })
+
 }

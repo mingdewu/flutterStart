@@ -43,11 +43,11 @@ class achievementPage extends StatelessWidget {
 }
 
 
-ElevatedButton achievementButton(BuildContext context){
-  return ElevatedButton(onPressed: (){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context)=> const achievementPage()),
-    );
-    }, child: const Text("achievment Page"));
-}
+// ElevatedButton achievementButton(BuildContext context){
+//   return ElevatedButton(onPressed: (){
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(builder: (context)=> const achievementPage()),
+//     );
+//     }, child: const Text("achievment Page"));
+// }

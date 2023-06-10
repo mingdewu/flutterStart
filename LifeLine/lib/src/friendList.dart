@@ -120,17 +120,17 @@ Column myFriendListPage(BuildContext context) {
   );
 }
 
-ElevatedButton friendListButton(BuildContext context) {
-  return ElevatedButton(
-      onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const friendsListPage(),
-            ));
-      },
-      child: const Text("friendListButton Page"));
-}
+// ElevatedButton friendListButton(BuildContext context) {
+//   return ElevatedButton(
+//       onPressed: () {
+//         Navigator.push(
+//             context,
+//             MaterialPageRoute(
+//               builder: (context) => const friendsListPage(),
+//             ));
+//       },
+//       child: const Text("friendListButton Page"));
+// }
 
 ListView yearsList(BuildContext context) {
   return ListView(

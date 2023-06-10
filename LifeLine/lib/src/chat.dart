@@ -17,8 +17,8 @@ class chatPage extends StatelessWidget{
             child: Column(
               children: [
                 talkButton(context),
-                friendListButton(context),
-                achievementButton(context),
+                // friendListButton(context),
+                // achievementButton(context),
                 quitButton(context),
               ],
             )
@@ -27,12 +27,12 @@ class chatPage extends StatelessWidget{
   }
 }
 
-ElevatedButton routerButton(BuildContext context){
-  return ElevatedButton(onPressed: (){
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context)=> talkPage()),
-    );
-  }, child: const Text("chat"));
-}
+// ElevatedButton routerButton(BuildContext context){
+//   return ElevatedButton(onPressed: (){
+//     Navigator.push(
+//       context,
+//       MaterialPageRoute(builder: (context)=> talkPage()),
+//     );
+//   }, child: const Text("chat"));
+// }
 
