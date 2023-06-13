@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'Package:http/http.dart' as http;
-String apiKey = "api-key";
+String apiKey = "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";
 class ApiServices{
 
   static String baseUrl = "https://api.openai.com/v1/completions";
