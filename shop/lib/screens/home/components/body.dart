@@ -3,8 +3,10 @@ import 'package:shop/models/Product.dart';
 
 import '../../../constants.dart';
 import 'Category.dart';
+import 'item_card.dart';
 class Body extends StatelessWidget {
   const Body({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -12,21 +14,28 @@ class Body extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal:kDefaultPadding),
+          padding:  const EdgeInsets.symmetric(horizontal:kDefaultPadding),
           child: Text("Women",
             style:Theme.of(context).textTheme.headline5?.copyWith(fontWeight: FontWeight.bold),),
         ),
-        Categories(),
-        Container(
-          padding: EdgeInsets.all(kDefaultPadding),
-          height: 180,
-          width: 160,
-          decoration: BoxDecoration(
-              color: products[0].color,
-              borderRadius: BorderRadius.circular(16)
-          ),
+        const Categories(),
+       Expanded(child: Padding(
+         padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
+         child: GridView.builder(
+             itemCount: products.length,
+             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                 crossAxisCount: 2,
+                 childAspectRatio: 0.75,
+                 mainAxisSpacing: kDefaultPadding,
+                 crossAxisSpacing: kDefaultPadding
+             ),
+             itemBuilder: (context,index)=>ItemCard(
+               product: products[index],
+             )
+         ),
+       )
+       )
 
-        )
       ],
     );
   }
